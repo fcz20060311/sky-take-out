@@ -38,4 +38,13 @@ public class CategoryServiceImpl implements CategoryService {
         category.setUpdateUser(BaseContext.getCurrentId());
         categoryMapper.update(category);
     }
+
+    public void status(Integer status,Long id){
+        Category category=new Category();
+        category.setId(id);
+        category.setStatus(status);
+        category.setUpdateTime(LocalDateTime.now());
+        category.setUpdateUser(BaseContext.getCurrentId());
+        categoryMapper.update(category);
+    }
 }

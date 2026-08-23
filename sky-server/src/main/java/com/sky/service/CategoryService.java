@@ -9,4 +9,6 @@ public interface CategoryService {
     PageResult pagequerry(CategoryPageQueryDTO categoryPageQueryDTO);
 
     void update(CategoryDTO categorydto);
+
+    void status(Integer status, Long id);
 }
