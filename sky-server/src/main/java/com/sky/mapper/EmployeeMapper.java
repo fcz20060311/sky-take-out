@@ -21,7 +21,7 @@ public interface EmployeeMapper {
     @Select("insert into employee (id,name,username,password,phone,sex,id_number,status,create_time,update_time,create_user,update_user  ) values (#{id},#{name},#{username},#{password},#{phone},#{sex},#{idNumber},#{status},#{createTime},#{updateTime},#{createUser},#{updateUser})")
     void insert(Employee employee);
 
-//    这个的快捷键是alt+shift+enter
+//    这个的快捷键是alt+shift+enter/alt+enter
     Page<Employee> pagequery(EmployeePageQueryDTO employeePageQueryDTO);
 
     //更新员工状态
