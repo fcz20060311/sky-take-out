@@ -44,4 +44,22 @@ public class CategoryController {
         categoryService.status(status,id);
         return Result.success();
     }
+
+    @ApiOperation("新增分类")
+    @PostMapping
+    public Result add(@RequestBody CategoryDTO categoryDTO){
+        log.info("新增分类:{}",categoryDTO);
+        categoryService.add(categoryDTO);
+        return Result.success();
+    }
+
+    @ApiOperation("根据类型查询分类")
+    @GetMapping("/list")
+    public Result<Category> List(String type){
+        log.info("根据类型查询分类：{}",type);
+        Category category=new Category();
+        category=categoryService.listByType(type);
+        return Result.success(category);
+    }
+
 }

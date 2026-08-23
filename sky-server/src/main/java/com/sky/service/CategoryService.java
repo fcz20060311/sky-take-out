@@ -11,4 +11,8 @@ public interface CategoryService {
     void update(CategoryDTO categorydto);
 
     void status(Integer status, Long id);
+
+    void add(CategoryDTO categoryDTO);
+
+    Category listByType(String type);
 }

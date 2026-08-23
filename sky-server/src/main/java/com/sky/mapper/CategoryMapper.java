@@ -10,4 +10,8 @@ public interface CategoryMapper {
     Page<Category> pagequery(CategoryPageQueryDTO categoryPageQueryDTO);
 
     void update(Category category);
+
+    void add1(Category category);
+
+    Category listByType(String type);
 }
