@@ -23,4 +23,6 @@ public interface EmployeeMapper {
 
 //    这个的快捷键是alt+shift+enter
     Page<Employee> pagequery(EmployeePageQueryDTO employeePageQueryDTO);
+
+    void update(Employee employee);
 }
