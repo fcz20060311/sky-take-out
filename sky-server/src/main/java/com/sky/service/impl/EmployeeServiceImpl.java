@@ -119,6 +119,11 @@ public class EmployeeServiceImpl implements EmployeeService {
         return employee;
     }
 
+    public Employee getById(Long id){
+        Employee employee=employeeMapper.getById(id);
+        return employee;
+    }
+
 
 }
 

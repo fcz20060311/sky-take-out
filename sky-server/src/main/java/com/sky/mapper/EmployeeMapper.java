@@ -24,5 +24,10 @@ public interface EmployeeMapper {
 //    这个的快捷键是alt+shift+enter
     Page<Employee> pagequery(EmployeePageQueryDTO employeePageQueryDTO);
 
+    //更新员工状态
     void update(Employee employee);
+
+    //根据员工id查询员工信息
+    @Select("select * from employee where id = #{id}")
+    Employee getById(Long id);
 }
