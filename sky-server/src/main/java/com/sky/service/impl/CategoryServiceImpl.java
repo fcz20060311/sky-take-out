@@ -62,17 +62,11 @@ public class CategoryServiceImpl implements CategoryService {
         category.setCreateUser(BaseContext.getCurrentId());
         category.setUpdateUser(BaseContext.getCurrentId());
         category.setStatus(StatusConstant.ENABLE);
-        if(category.getType()==1){
-            dishMapper.add(category);
-        }
-        else{
-            setmealMapper.add(category);
-        }
+        categoryMapper.insert(category);
     }
 
-    public Category ListByType(String type){
-        Category category=new Category();
-        category=categoryMapper.listByType(type);
+    public List<Category> listByType(Integer type){
+        List<Category> category=categoryMapper.listByType(type);
         return category;
     }
 }

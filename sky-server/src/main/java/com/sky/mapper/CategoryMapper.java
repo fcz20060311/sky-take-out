@@ -5,13 +5,15 @@ import com.sky.dto.CategoryPageQueryDTO;
 import com.sky.entity.Category;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
 @Mapper
 public interface CategoryMapper {
     Page<Category> pagequery(CategoryPageQueryDTO categoryPageQueryDTO);
 
     void update(Category category);
 
-    void add1(Category category);
+    void insert(Category category);
 
-    Category listByType(String type);
+    List<Category> listByType(Integer type);
 }

@@ -5,6 +5,8 @@ import com.sky.dto.CategoryPageQueryDTO;
 import com.sky.entity.Category;
 import com.sky.result.PageResult;
 
+import java.util.List;
+
 public interface CategoryService {
     PageResult pagequerry(CategoryPageQueryDTO categoryPageQueryDTO);
 
@@ -14,5 +16,5 @@ public interface CategoryService {
 
     void add(CategoryDTO categoryDTO);
 
-    Category listByType(String type);
+    List<Category> listByType(Integer type);
 }

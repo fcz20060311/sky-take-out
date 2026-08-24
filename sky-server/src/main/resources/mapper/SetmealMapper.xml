@@ -3,9 +3,5 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.sky.mapper.SetmealMapper">
 
-    <!--    分类管理的新增菜品分类-->
-    <insert id="add">
-        insert into category(type,name,sort,status,create_time,update_time,create_user,update_user)
-        values(#{type},#{name},#{sort},#{status},#{createTime},#{updateTime},#{createUser},#{updateUser})
-    </insert>
+
 </mapper>
