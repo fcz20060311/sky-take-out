@@ -63,4 +63,12 @@ public class CategoryController {
         return Result.success(category);
     }
 
+    @ApiOperation("根据id删除分类")
+    @DeleteMapping
+    public Result delete(Long id){
+        log.info("根据id删除分类:{}",id);
+        categoryService.delete(id);
+        return Result.success();
+    }
+
 }

@@ -2,11 +2,13 @@ package com.sky.service.impl;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
+import com.sky.constant.MessageConstant;
 import com.sky.constant.StatusConstant;
 import com.sky.context.BaseContext;
 import com.sky.dto.CategoryDTO;
 import com.sky.dto.CategoryPageQueryDTO;
 import com.sky.entity.Category;
+import com.sky.exception.DeletionNotAllowedException;
 import com.sky.mapper.CategoryMapper;
 import com.sky.mapper.DishMapper;
 import com.sky.mapper.SetmealMapper;
@@ -68,5 +70,17 @@ public class CategoryServiceImpl implements CategoryService {
     public List<Category> listByType(Integer type){
         List<Category> category=categoryMapper.listByType(type);
         return category;
+    }
+
+    public void delete(Long id){
+        int dishCount=dishMapper.countById(id);
+        if(dishCount>0){
+            throw new DeletionNotAllowedException(MessageConstant.CATEGORY_BE_RELATED_BY_DISH);
+        }
+        int setmealCount=setmealMapper.countById(id);
+        if(setmealCount>0){
+            throw new DeletionNotAllowedException(MessageConstant.CATEGORY_BE_RELATED_BY_SETMEAL);
+        }
+
     }
 }

@@ -17,4 +17,6 @@ public interface CategoryService {
     void add(CategoryDTO categoryDTO);
 
     List<Category> listByType(Integer type);
+
+    void delete(Long id);
 }

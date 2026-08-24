@@ -4,4 +4,9 @@
 <mapper namespace="com.sky.mapper.SetmealMapper">
 
 
+    <select id="countById" resultType="java.lang.Integer">
+        select count(*)
+        from setmeal
+        where category_id = #{categoryId}
+    </select>
 </mapper>

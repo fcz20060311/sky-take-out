@@ -5,5 +5,6 @@ import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface DishMapper {
-    void add(Category category);
+
+    int countById(Long id);
 }
