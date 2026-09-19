@@ -37,4 +37,7 @@
             and type=#{type}
         </if>
     </select>
+    <select id="getById" resultType="com.sky.entity.Category">
+        select * from category where id = #{id};
+    </select>
 </mapper>
